@@ -1,0 +1,32 @@
+<%= form_with model: player do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% player.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :last_name %><br>
+    <%= form.text_area :last_name %><br>
+    <% player.errors.full_messages_for(:last_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+
+
+    <%if action_name == "edit"%>
+    <div>
+        <%= form.label :money %><br>
+        <%= form.text_area :money %><br>
+        <% player.errors.full_messages_for(:money).each do |message| %>
+        <div><%= message %></div>
+        <% end %>
+    </div>
+    <%end%>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

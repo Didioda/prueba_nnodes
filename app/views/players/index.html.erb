@@ -1,0 +1,10 @@
+<h1>Jugadores</h1>
+
+<% @players.each do |player| %>
+    <h2><%= "ID: #{player.id} Name: #{player.name} Last Name: #{player.last_name} Money: #{player.money} " %></h2>
+
+    <ul>
+        <li><%= link_to "Edit", edit_player_path(player)%></li>
+        <li><%= link_to "Destroy", player_path(player), method: :delete, data:{ confirm: "Are you sure?"} %></li>
+    </ul>
+<%end%>
