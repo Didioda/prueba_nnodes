@@ -40,12 +40,14 @@ class PlayersController < ApplicationController
         redirect_to players_path
     end
 
+    def probability
+        @player = Player.find(params[:id])
+    end
 
 
     private
         def player_params
             params.require(:player).permit(:name,:last_name)
         end
-
 
 end
