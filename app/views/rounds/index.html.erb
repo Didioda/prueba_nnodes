@@ -1,14 +1,12 @@
 <h1>¡Games!</h1>
 
-
 <ul>
         <li><%= link_to "New Player", new_player_path%></li>
 </ul>
-
-<% @rounds.each do |round| %></>
-    
-    <h2><%= "Ronda: #{ronda.id} Ganador: #{player.name} #{player.last_name}"%></h2>
-    
-    
-
+<% @rounds.each do |round| %>
+        <%if (round.player.nil?) %>
+                <%"Ronda #{round.id} sin ganador."%>
+        <%else%>
+                <h2><%= "Ronda: #{round.id} Ganador: #{round.player.name}" %></h2>"
+        <%end%>
 <%end%>

@@ -1,16 +1,18 @@
 class Round < ApplicationRecord
+    belongs_to :player, optional:true
     
+
     def WinningBall
         value = rand()
         if value<=0.02
 
-            return "Green"
+            return "green"
         elsif value<=0.51
-            return "Red"
+            return "red"
         else
-            return "Black"
+            return "black"
         end
     end
 
-end    
+end
 

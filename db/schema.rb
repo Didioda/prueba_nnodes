@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_21_001913) do
+ActiveRecord::Schema.define(version: 2021_09_29_000859) do
 
   create_table "bets", force: :cascade do |t|
     t.string "color"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2021_09_21_001913) do
     t.string "result"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "player_id"
+    t.index ["player_id"], name: "index_rounds_on_player_id"
   end
 
 end
