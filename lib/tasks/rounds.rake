@@ -21,8 +21,7 @@ namespace :rounds do
             round.player = player
             if round.result=="green"
               player.money += (player_bet*15)
-            else
-              
+            els
               player.money += (player_bet*2)
             end
           else
