@@ -24,3 +24,7 @@ set :environment, "development"
 every 1.minutes do
     rake 'rounds:round_update'
 end
+
+every 1.day at: '12:00 am' do
+    rake 'changeday:update_day'
+end
