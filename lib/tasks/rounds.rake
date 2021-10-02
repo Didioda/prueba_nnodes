@@ -6,21 +6,20 @@ namespace :rounds do
 
     #Logica apuesta
     Player.all.each do |player|
+
       if player.money>1000
         player_bet = (player.money*player.range)
       elsif player.money >0 & player.money <=1000
-          player_bet = player.money
+        player_bet = player.money
       else
         pass
       end
-        if player.money > 1000    
-          puts "Ronda: "+round.result
-          puts "Jugador:" +player.probability
-          puts "---------------------"
+      bet = Bet.create(player:player, bet:player_bet, round:round  )
+
+      if player.money > 1000    
           if round.result == player.probability
             round.player = player
             if round.result=="green"
-              
               player.money += (player_bet*15)
             else
               
@@ -32,9 +31,9 @@ namespace :rounds do
         playerMoney = player.money
         player.money = playerMoney.round(0)
         player.update money: player.money
-        end
         
-        if player.money<=1000
+        
+        elsif player.money<=1000
 
           if round.result == player.probability
             round.player = player
@@ -50,14 +49,14 @@ namespace :rounds do
           end
         end
 
-        bet = Bet.create(player:player, bet:player_bet, round:round  )
-
         playerMoney = player.money
         player.money = playerMoney.round(0)
         player.update money: player.money
       end
+     
       round.save!
- 
     
   end
+  
+  
 end
