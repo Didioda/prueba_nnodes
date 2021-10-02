@@ -1,0 +1,5 @@
+<H1>All the games</H1>
+
+<% @bets.each do |bet|%>
+    <p><%= "Ronda: #{bet.round.id} Jugador: #{bet.player.name} #{bet.player.last_name} Apuesta: #{bet.playerBet} Resultado: #{bet.round.result}"%>
+<%end%>
