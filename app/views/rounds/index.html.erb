@@ -2,6 +2,7 @@
 
 <ul>
         <li><%= link_to "New Player", new_player_path%></li>
+        <li><%= link_to "List Players" , players_path%></li>
 </ul>
 <% @rounds.each do |round| %>
         <%if (round.player.nil?) %>

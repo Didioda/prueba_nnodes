@@ -19,7 +19,7 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-
+set :output, "log/cron.log" 
 every 1.minute do
-    rask "rounds:round_update"
+    rake "rounds:round_update"
 end

@@ -79,6 +79,7 @@ GEM
     chronic (0.10.2)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
+    daemons (1.4.1)
     erubi (1.10.0)
     ffi (1.15.4)
     globalid (0.5.2)
@@ -212,6 +213,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  daemons (~> 1.4, >= 1.4.1)
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg

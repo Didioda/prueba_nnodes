@@ -44,7 +44,7 @@ namespace :rounds do
       playerMoney = player.money
       player.money = playerMoney.round(0)
       player.update money: player.money
-
+      
     end
     
   end
