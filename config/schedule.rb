@@ -19,7 +19,8 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-set :output, "log/cron.log" 
-every 1.minute do
-    rake "rounds:round_update"
+
+set :environment, "development"
+every 3.minutes do
+    rake 'rounds:round_update'
 end
