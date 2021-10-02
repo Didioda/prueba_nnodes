@@ -7,6 +7,10 @@
         <li><%= link_to "Show", player_path(player)%></li>
         <li><%= link_to "Edit", edit_player_path(player)%></li>
         <li><%= link_to "Destroy", player_path(player), method: :delete, data:{ confirm: "Are you sure?"} %></li>
-        
+
+    </ul>
+
+    <ul>
+        <li><%= link_to "Volver a rondas", rounds_path%></li>
     </ul>
 <%end%>
